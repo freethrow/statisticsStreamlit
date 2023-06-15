@@ -11,12 +11,16 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 # Initialize with a Project Key
-deta_project_key = config("DETA_PROJECT_KEY", cast=str)
+
+deta_project_key = config("DETA_PROJECT_KEY_2", cast=str)
 deta = Deta(deta_project_key)
 drive = deta.Drive("statistics")
+print(drive)
 
 
-@st.cache
+
+
+@st.cache_data
 def load_world_data(filename):
 
     world_stats = drive.get(filename)
@@ -28,7 +32,7 @@ def load_world_data(filename):
 
 
 # get period
-# @st.cache
+@st.cache_data
 def load_data_period():
 
     deta_file = drive.get("Period.txt")
@@ -174,7 +178,7 @@ with st.container():
 
     with st.sidebar:
         flux = st.selectbox(
-            "Selezionare il flusso",
+            "Selezionare il flusso con Italia",
             ("Esportazioni", "Importazioni", "Interscambio"),
             key=3,
         )
