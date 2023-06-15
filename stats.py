@@ -105,9 +105,9 @@ with st.container():
         )
 
         if flux == "Importazioni":
-            var = "Var. Export"
-        elif flux == "Esportazioni":
             var = "Var. Import"
+        elif flux == "Esportazioni":
+            var = "Var. Export"
         elif flux == "Interscambio":
             var = "Var. Interscambio"
 
@@ -183,9 +183,9 @@ with st.container():
             key=3,
         )
 
-        if flux == "Importazioni":
+        if flux == "Esportazioni":
             var = "Var. Export"
-        elif flux == "Esportazioni":
+        elif flux == "Importazioni":
             var = "Var. Import"
         elif flux == "Interscambio":
             var = "Var. Interscambio"
