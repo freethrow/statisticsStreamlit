@@ -20,7 +20,7 @@ print(drive)
 
 
 
-@st.cache_data
+@st.cache
 def load_world_data(filename):
 
     world_stats = drive.get(filename)
@@ -32,7 +32,7 @@ def load_world_data(filename):
 
 
 # get period
-@st.cache_data
+@st.cache
 def load_data_period():
 
     deta_file = drive.get("Period.txt")
